@@ -11,6 +11,7 @@
     "eslint": "^7.32.0 || ^8.2.0",
     "eslint-config-prettier": "^8.5.0",
     "log-symbols": "^5.1.0",
+    "nanospinner": "^1.1.0",
     "node-localstorage": "^2.2.1",
     "prettier": "^2.6.2",
     "readline-sync": "^1.4.10"
@@ -19,5 +20,8 @@
   "devDependencies": {
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.2"
+  },
+  "scripts": {
+    "start": "node --experimental-specifier-resolution=node index.js"
   }
 }

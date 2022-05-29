@@ -1,0 +1,4 @@
+const LOGIN_SESSION = "LOGIN_SESSION";
+const USER_DATA = "USER_DATA";
+
+export { LOGIN_SESSION, USER_DATA };
