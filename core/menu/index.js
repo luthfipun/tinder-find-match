@@ -8,6 +8,8 @@ import moment from "moment";
 import { Liked } from "../../domain/data/likes_you";
 import { LikesYou } from "../likes_you";
 import { LOGIN_SESSION } from "../../domain/util/constant";
+import { likesYouGenerators } from "../../view/likes_you_generators.js";
+import path from "path";
 
 const backToMenu = async () => {
     let msgBackMenu = "Back to the menu?";
@@ -58,11 +60,13 @@ export const menu_likes_you = async () => {
         await menu_likes_you();
     }
 
+    await likesYouGenerators();
+
     let msg = `\n
         Who Liks You
         ==========================
         congrat's you have ${likedDatas.length} people who likes you
-        you can show theirs photos with this links https://google.com
+        you can show theirs photos with this links open with browser file://${process.cwd()}/view/liked.html
         `;
 
     logInfo(msg);
