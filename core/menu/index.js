@@ -5,6 +5,9 @@ import { Main } from "../main";
 var localstorage = new LocalStorage("./tmp");
 import readlineSync from "readline-sync";
 import moment from "moment";
+import { Liked } from "../../domain/data/likes_you";
+import { LikesYou } from "../likes_you";
+import { LOGIN_SESSION } from "../../domain/util/constant";
 
 const backToMenu = async () => {
     let msgBackMenu = "Back to the menu?";
@@ -37,6 +40,31 @@ export const menu_profile = async () => {
             last login : ${moment(user.ping).format("llll")}
             location : https://www.google.com/search?q=${user.lat},${user.lon}
         `;
+    logInfo(msg);
+    backToMenu();
+};
+
+export const menu_likes_you = async () => {
+    let likedDatas = new Liked().get();
+
+    if (likedDatas === null) {
+        let token = localstorage.getItem(LOGIN_SESSION);
+        let likesYou = new LikesYou(token);
+        let isLikesYou = await likesYou.findLikesYou();
+
+        if (!isLikesYou) {
+            backToMenu();
+        }
+        await menu_likes_you();
+    }
+
+    let msg = `\n
+        Who Liks You
+        ==========================
+        congrat's you have ${likedDatas.length} people who likes you
+        you can show theirs photos with this links https://google.com
+        `;
+
     logInfo(msg);
     backToMenu();
 };

@@ -9,9 +9,7 @@ export class User {
 
     save() {
         let { data } = this.responseData;
-        let { user } = data;
-        let { account } = data;
-        let { likes } = data;
+        let { user, account, likes } = data;
 
         let userData = new UserData(
             user._id,

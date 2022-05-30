@@ -22,7 +22,6 @@ export class Login {
                 return true;
             })
             .catch((err) => {
-                console.log(err);
                 if (err.response) {
                     loading.error({
                         text:
