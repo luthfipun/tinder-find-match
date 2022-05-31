@@ -1,5 +1,5 @@
 import axios from "axios";
-import { LIKED, LOGIN } from "../path_url";
+import { CORE, LIKED, LIKES, LOGIN, PASS } from "../path_url";
 
 const defaultHeaders = (token) => {
     return {
@@ -25,4 +25,19 @@ export const serviceLogin = (token) => {
 
 export const serviceLikesYou = (token) => {
     return getData(LIKED, token);
+};
+
+export const serviceFindMatch = (token) => {
+    return getData(CORE, token);
+};
+
+export const serviceLikeMatch = (token, id) => {
+    return postData(LIKES + id, token);
+};
+
+export const servicePassMatch = (token, id, s_number, content_hash) => {
+    return getData(
+        PASS + `${id}?s_number=${s_number}&content_hash=${content_hash}`,
+        token
+    );
 };

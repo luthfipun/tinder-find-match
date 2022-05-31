@@ -2,7 +2,7 @@ import readLineSync from "readline-sync";
 import { User } from "../../domain/data/user";
 import { logSuccess } from "../../domain/util/logs";
 import { Authorize } from "../authorize";
-import { menu_likes_you, menu_profile } from "../menu";
+import { menu_find_match, menu_likes_you, menu_profile } from "../menu";
 
 export class Main {
     async #checkAuth() {
@@ -40,6 +40,9 @@ export class Main {
                 break;
             case 1:
                 await menu_likes_you();
+                break;
+            case 2:
+                await menu_find_match();
                 break;
             default:
                 break;
