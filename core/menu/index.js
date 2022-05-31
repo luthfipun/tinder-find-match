@@ -1,4 +1,4 @@
-import { logInfo, logWarning } from "../../domain/util/logs";
+import { logInfo, logLoading, logWarning } from "../../domain/util/logs";
 import moment from "moment";
 import { LocalStorage } from "node-localstorage";
 import readlineSync from "readline-sync";
@@ -13,6 +13,7 @@ import cliProgress from "cli-progress";
 import chalk from "chalk";
 import { matchesGenerator } from "../../view/matces_generators.js";
 import { Matching } from "../matching";
+import { sleep } from "../../domain/util/helper";
 var localstorage = new LocalStorage("./tmp");
 let matchesCollection = [];
 
@@ -230,4 +231,13 @@ const passPeople = async (data) => {
     } else {
         backToMenu();
     }
+};
+
+export const menu_logout = async () => {
+    let loading = logLoading("Logout and clear all data...");
+    loading.start();
+    localstorage.clear();
+    await sleep();
+    loading.success("Logout");
+    process.exit(0);
 };
