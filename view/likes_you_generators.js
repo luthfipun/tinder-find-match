@@ -1,6 +1,6 @@
 import { LocalStorage } from "node-localstorage";
-import { LIKED_DATA } from "../domain/util/constant";
-import { logError, logSuccess } from "../domain/util/logs";
+import { LIKED_DATA } from "../domain/util/constant/index.js";
+import { logError, logSuccess } from "../domain/util/logs/index.js";
 var localstorage = new LocalStorage("./tmp");
 import fs from "fs";
 

@@ -1,5 +1,8 @@
-import { serviceLikeMatch, servicePassMatch } from "../../data_source/services";
-import { logLoading } from "../../domain/util/logs";
+import {
+    serviceLikeMatch,
+    servicePassMatch,
+} from "../../data_source/services/index.js";
+import { logLoading } from "../../domain/util/logs/index.js";
 
 export class Matching {
     constructor(token, data) {

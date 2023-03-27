@@ -1,6 +1,6 @@
-import { serviceLikesYou } from "../../data_source/services";
-import { Liked } from "../../domain/data/likes_you";
-import { logLoading } from "../../domain/util/logs";
+import { serviceLikesYou } from "../../data_source/services/index.js";
+import { Liked } from "../../domain/data/likes_you/index.js";
+import { logLoading } from "../../domain/util/logs/index.js";
 
 const loading = logLoading("Try find who likes you..");
 

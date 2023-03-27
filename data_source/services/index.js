@@ -1,5 +1,5 @@
 import axios from "axios";
-import { CORE, LIKED, LIKES, LOGIN, PASS } from "../path_url";
+import { CORE, LIKED, LIKES, LOGIN, PASS } from "../path_url/index.js";
 
 const defaultHeaders = (token) => {
     return {

@@ -1,5 +1,5 @@
 import { LocalStorage } from "node-localstorage";
-import { USER_DATA } from "../../util/constant";
+import { USER_DATA } from "../../util/constant/index.js";
 var localstorage = new LocalStorage("./tmp");
 
 export class User {

@@ -1,7 +1,7 @@
 import { LocalStorage } from "node-localstorage";
 import readlineSync from "readline-sync";
-import { LOGIN_SESSION } from "../../domain/util/constant";
-import { Login } from "../login";
+import { LOGIN_SESSION } from "../../domain/util/constant/index.js";
+import { Login } from "../login/index.js";
 var localstorage = new LocalStorage("./tmp");
 
 const isCurrentSession = localstorage.getItem(LOGIN_SESSION) !== null;

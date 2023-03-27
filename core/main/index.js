@@ -1,13 +1,13 @@
 import readLineSync from "readline-sync";
-import { User } from "../../domain/data/user";
-import { logSuccess } from "../../domain/util/logs";
-import { Authorize } from "../authorize";
+import { User } from "../../domain/data/user/index.js";
+import { logSuccess } from "../../domain/util/logs/index.js";
+import { Authorize } from "../authorize/index.js";
 import {
     menu_find_match,
     menu_likes_you,
     menu_logout,
     menu_profile,
-} from "../menu";
+} from "../menu/index.js";
 
 export class Main {
     async #checkAuth() {

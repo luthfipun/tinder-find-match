@@ -1,6 +1,6 @@
-import { serviceLogin } from "../../data_source/services";
-import { User } from "../../domain/data/user";
-import { logLoading } from "../../domain/util/logs";
+import { serviceLogin } from "../../data_source/services/index.js";
+import { User } from "../../domain/data/user/index.js";
+import { logLoading } from "../../domain/util/logs/index.js";
 
 const loading = logLoading("Try login to your account...");
 

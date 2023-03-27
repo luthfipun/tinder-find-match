@@ -1,19 +1,23 @@
-import { logInfo, logLoading, logWarning } from "../../domain/util/logs";
+import {
+    logInfo,
+    logLoading,
+    logWarning,
+} from "../../domain/util/logs/index.js";
 import moment from "moment";
 import { LocalStorage } from "node-localstorage";
 import readlineSync from "readline-sync";
-import { Liked } from "../../domain/data/likes_you";
-import { User } from "../../domain/data/user";
-import { LIKED_DATA, LOGIN_SESSION } from "../../domain/util/constant";
+import { Liked } from "../../domain/data/likes_you/index.js";
+import { User } from "../../domain/data/user/index.js";
+import { LIKED_DATA, LOGIN_SESSION } from "../../domain/util/constant/index.js";
 import { likesYouGenerators } from "../../view/likes_you_generators.js";
-import { FindMatch } from "../find_match";
-import { LikesYou } from "../likes_you";
-import { Main } from "../main";
+import { FindMatch } from "../find_match/index.js";
+import { LikesYou } from "../likes_you/index.js";
+import { Main } from "../main/index.js";
 import cliProgress from "cli-progress";
 import chalk from "chalk";
 import { matchesGenerator } from "../../view/matces_generators.js";
-import { Matching } from "../matching";
-import { sleep } from "../../domain/util/helper";
+import { Matching } from "../matching/index.js";
+import { sleep } from "../../domain/util/helper/index.js";
 var localstorage = new LocalStorage("./tmp");
 let matchesCollection = [];
 

@@ -1,5 +1,5 @@
-import { serviceFindMatch } from "../../data_source/services";
-import { logLoading } from "../../domain/util/logs";
+import { serviceFindMatch } from "../../data_source/services/index.js";
+import { logLoading } from "../../domain/util/logs/index.js";
 
 const loading = logLoading("Try find people on tinder...");
 

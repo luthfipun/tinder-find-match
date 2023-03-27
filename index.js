@@ -1,4 +1,4 @@
-import { Main } from "./core/main";
+import { Main } from "./core/main/index.js";
 
 (async function () {
     let main = new Main();

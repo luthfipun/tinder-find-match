@@ -1,5 +1,5 @@
 import { LocalStorage } from "node-localstorage";
-import { LIKED_DATA } from "../../util/constant";
+import { LIKED_DATA } from "../../util/constant/index.js";
 var localstorage = new LocalStorage("./tmp");
 
 export class Liked {

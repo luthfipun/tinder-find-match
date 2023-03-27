@@ -1,6 +1,6 @@
 import fs from "fs";
 import moment from "moment";
-import { logError, logSuccess } from "../domain/util/logs";
+import { logError, logSuccess } from "../domain/util/logs/index.js";
 
 export const matchesGenerator = async (data) => {
     await fs.writeFileSync(
